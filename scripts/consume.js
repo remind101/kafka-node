@@ -10,9 +10,9 @@ var count = {}, messageCount = 0;
 consumer.on('message', function(message, commit) {
   ++messageCount;
   count[message.value] = (count[message.value] || 0) + 1;
-  if (Math.random() < 1e-3) {
-      throw new Error('spurious error!'); // ain't that the truth
-  }
+  //if (Math.random() < 1e-3) {
+  //    throw new Error('spurious error!'); // ain't that the truth
+  //}
   setTimeout(commit, 100); // simulate slowness
 });
 setInterval(function() {
